@@ -47,3 +47,7 @@ logs/
 *.bak
 *.tmp
 *.orig
+
+# SASS
+*.css.map
+*.scss
