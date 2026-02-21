@@ -1,0 +1,42 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding-block: 24px;
+
+  img {
+    width: 286px;
+    height: 286px;
+    object-fit: cover;
+  }
+}
+
+@media (width >= 48em) and (width < 64em) {
+  main {
+    // allign the rows to the left edge so the columns look consistent
+    justify-content: flex-start;
+
+    img {
+      // 100% = container available width; 24px = gap set on the main container; with 3 columns there are 2 gaps per row -> 2* 24px = 48px; take all and divide by 3 so each image gets exactly one third of the remaining space, producing 3 equal columns.
+      width: calc((100% - 2 * 24px) / 3);
+      height: auto;
+
+      // keeps image square, height follows the width.
+      aspect-ratio: 1 / 1;
+    }
+  }
+}
+
+@media (width < 48em) {
+  main {
+    gap: 16px;
+    padding-block: 16px;
+
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+    }
+  }
+}

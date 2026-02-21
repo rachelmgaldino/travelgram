@@ -1,0 +1,33 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  line-height: 0;
+  padding-block: 20px;
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    li:last-child img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+}
+
+@media (width < 48em) {
+  nav {
+    padding-bottom: 16px;
+    ul {
+      // show only first child
+      li:not(:first-child) {
+        display: none;
+      }
+    }
+  }
+}

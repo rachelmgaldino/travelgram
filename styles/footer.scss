@@ -1,0 +1,20 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 24px;
+  font: var(--text-md);
+
+  div {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+@media (width < 48em) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+  }
+}

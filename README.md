@@ -6,7 +6,7 @@ A responsive travel profile page UI with a photo grid, built with HTML and CSS.
 
 Travelgram is a static, single-page layout that mimics a social/travel profile experience (profile header, location/travel stats, and a gallery feed). This project highlights my ability to build a clean UI from a design using semantic HTML, modern CSS, and reusable layout patterns.
 
-**Demo:**
+**Preview:**
 
 ![Travelgram preview](./assets/travelgram-demo.png)
 
@@ -15,7 +15,12 @@ Travelgram is a static, single-page layout that mimics a social/travel profile e
 ## Features
 
 - ✅ Profile header layout (avatar, bio, and quick stats)
-- ✅ Responsive photo gallery grid using Flexbox + wrapping
+- ✅ Responsive navigation (collapses on mobile)
+- ✅ Responsive header layout (stacks on mobile)
+- ✅ Responsive photo gallery using Flexbox + wrapping:
+    - Mobile: 1 column (full width inside `16px` container padding)
+    - Tablet: 3 columns (auto-sized via `calc()`)
+    - Desktop: fixed-size tiles
 - ✅ Clean navigation bar with icons and user avatar
 - ✅ Design tokens with CSS variables + consistent typography
 
@@ -27,6 +32,7 @@ Travelgram is a static, single-page layout that mimics a social/travel profile e
 
 - HTML5
 - CSS3 (Flexbox)
+- SCSS (authored) + CSS (compiled)
 
 **Other Tools:**
 
@@ -39,6 +45,8 @@ Travelgram is a static, single-page layout that mimics a social/travel profile e
 ### Prerequisites
 
 - Any modern browser (Chrome, Firefox, Edge)
+- (Optional) VS Code + Live Server extension
+- (Optional) VS Code Live Sass Compiler (to auto-generate `.css` from `.scss`)
 
 ### Installation
 
@@ -54,6 +62,16 @@ cd travelgram
 - Open `index.html` directly in your browser, or
 - Use VS Code Live Server and open `index.html`
 
+### Editing Styles (SCSS)
+
+This project is written in SCSS and compiled to plain CSS for the browser.
+
+- Source: `styles/*.scss`
+- Compiled output (committed): `styles/*.css`
+- Sourcemaps (ignored): `*.css.map`
+
+If you're using the VS Code **Live Sass Compiler**, start “Watch Sass” and edit the `.scss` files. The compiler will update the corresponding `.css` files automatically.
+
 ---
 
 ## Project Structure
@@ -62,12 +80,12 @@ cd travelgram
 travelgram/
 ├── index.html
 ├── styles/
-│   ├── global.css
-│   ├── nav.css
-│   ├── header.css
-│   ├── main.css
-│   ├── footer.css
-│   └── index.css
+│   ├── global.css / global.scss
+│   ├── nav.css / nav.scss
+│   ├── header.css / header.scss
+│   ├── main.css / main.scss
+│   ├── footer.css / footer.scss
+│   └── index.css / index.scss
 └── assets/
     ├── travelgram-demo.png
     ├── Logo.svg
@@ -83,6 +101,7 @@ This project taught me:
 
 - How to structure a profile layout with flexible containers and predictable spacing
 - How to build an image gallery that maintains consistent sizing (`object-fit: cover`) while wrapping cleanly
+- How to create breakpoints that feel consistent across devices (mobile/tablet/desktop)
 - How to keep styles scalable using CSS variables and small, focused style files
 
 ---
@@ -91,8 +110,8 @@ This project taught me:
 
 If I were to rebuild this project, I would:
 
-- [ ] Add responsive breakpoints for small screens (stack header columns, reduce image sizes)
 - [ ] Improve accessibility (replace `alt="..."` placeholders with descriptive text and add visible focus states)
+- [ ] Add an npm-based Sass build script (e.g. `sass --watch`) to standardize compilation (instead of relying on a VS Code-only workflow)
 - [ ] Turn the navigation and footer items into real links/routes
 
 ---
