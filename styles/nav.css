@@ -15,4 +15,13 @@ nav ul li:last-child img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+@media (width < 48em) {
+  nav {
+    padding-bottom: 16px;
+  }
+  nav ul li:not(:first-child) {
+    display: none;
+  }
 }/*# sourceMappingURL=nav.css.map */

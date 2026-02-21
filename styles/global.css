@@ -44,4 +44,12 @@ a:hover {
 
 .bg-surface-color {
   background-color: var(--surface-color);
+}
+
+@media (width < 48em) {
+  nav.container,
+  main.container,
+  footer.container {
+    padding-inline: 16px;
+  }
 }/*# sourceMappingURL=global.css.map */

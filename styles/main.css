@@ -10,4 +10,26 @@ main img {
   height: 286px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (width >= 48em) and (width < 64em) {
+  main {
+    justify-content: flex-start;
+  }
+  main img {
+    width: calc((100% - 48px) / 3);
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+}
+@media (width < 48em) {
+  main {
+    gap: 16px;
+    padding-block: 16px;
+  }
+  main img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
 }/*# sourceMappingURL=main.css.map */
